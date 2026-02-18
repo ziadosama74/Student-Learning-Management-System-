@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/StyleMainPage.css">
+    <title>LMS</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Login -->
+        <div class="Login">
+            <span id="MsgSiIn"></span>
+            <h2>Welcome Back</h2>
+            <p>Login to your account</p>
+
+            <div class="input-group">
+                <input type="email" placeholder="Email" id="EmailLogin">
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" id="PassLogin">
+            </div>
+            <button id="BtnLogin">Login</button>
+            <div class="switch">
+                Don't have an account? <span class="SignUp" id="SignUp">Sign Up</span>
+            </div>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="signup" id="SignupCard">
+            <span id="MsgSiUp"></span>
+            <h2>Create Account</h2>
+            <p>Join us today</p>
+
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" id="FN">
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" id="SiUPEM">
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" id="SiUPPASS">
+            </div>
+
+            <button id="SiUPBTN">Sign Up</button><br>
+
+            <div class="switch">
+                Already have an account? <span id="Login">Login</span>
+            </div>
+        </div>
+            <!-- Right Side -->
+        <div class="right" id="Cover">
+            <div>
+                <h1>Hello Student👋</h1>
+                <p>Enter your personal details and start your journey with us</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="JS/ScriptDesign.js"></script>
+<script src="JS/ScriptSignUp_Login.js"></script>
+</html>
