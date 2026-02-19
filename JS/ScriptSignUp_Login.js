@@ -5,7 +5,7 @@ var SignUpBtn = document.getElementById("SiUPBTN");
 var RegExpFullName = new RegExp("^[A-Za-z\u0600-\u06FF]{2,}(?:\\s+[A-Za-z\u0600-\u06FF]{2,})+$");
 var RegExpSignUpEmail = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
 //=============================================================================================
-//localStorage.setItem("users", JSON.stringify([]));
+// localStorage.setItem("users", JSON.stringify([]));
 //=============================================================================================
 //=======                               Sign Up Button                                   ======
 //=============================================================================================
@@ -49,7 +49,12 @@ SignUpBtn.addEventListener("click", () => {
         users.push({
             name: FullName.value,
             email: SignUpEmail.value,
-            password:SignUpPass.value
+            password:SignUpPass.value,
+            ImgSrc : "/Imgaes/DefultImage.png",
+            TasksAll:[],
+            TasksComleteted:[],
+            TasksPending:[],
+            Courses:[]
         });
         localStorage.setItem("users", JSON.stringify(users));
         MsgSiUp.textContent = "your account has been created successfully";
@@ -65,19 +70,17 @@ var PassLogin = document.getElementById("PassLogin");
 var BtnLogin = document.getElementById("BtnLogin");
 BtnLogin.addEventListener("click",()=>{
     var Found = false;
-    var Email = "";
-    var Name = "";
+    var Index = 0;
     var usersFromStorage = JSON.parse(localStorage.getItem("users"));
     for(var i = 0 ; i < usersFromStorage.length ; i++){
         if((usersFromStorage[i].email == EmailLogin.value) && (usersFromStorage[i].password == PassLogin.value)){
-            Email = usersFromStorage[i].email;
-            Name = usersFromStorage[i].name;
+            Index = i ;
             Found = true;
             break;
         }
     }
     if(Found){
-        window.location.href = `pages/profile.html?email=${Email}&fullname=${Name}`;
+        window.location.href = `pages/Dashboard.html?index=${Index}`;
     }
     else{
         MsgSiIn.textContent = "Incorrect login";

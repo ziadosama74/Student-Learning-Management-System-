@@ -1,0 +1,347 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    height:100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #035b5b, #059191);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* nav list */
+header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    margin: 0;
+    padding: 0 40px;
+}
+
+/* links */
+header ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+
+    padding: 10px 22px;
+    border-radius: 30px;
+    position: relative;
+
+    transition: background-color 0.3s ease;
+}
+
+/* hover */
+header ul li a:hover {
+    color: #035b5b;
+    background-color: white;
+    text-decoration: none;
+}
+
+/* REMOVE underline animation */
+header ul li a::after {
+    display: none;
+}
+
+/* active link */
+header ul li a.active {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+}
+
+/* underline animation */
+header ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+header ul li a:hover::after {
+    width: 60%;
+}
+
+/* mobile responsive */
+@media (max-width: 768px) {
+    header ul {
+        padding: 0 15px;
+    }
+
+    header ul li a {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+}
+.continer{
+    /* background-color: #ff0202; */
+    margin-top: 4%;
+    width: 100%;
+    height:91%;
+    padding: 50px;
+    display: flex;
+}
+.continer .Statistics ,.continer .Left{
+    height: 100%;
+    width: 55%;
+    /* background-color: blue; */
+    margin: 5px;
+}
+.continer .Left > div {
+    width: 100%;
+    height: 50%;
+    padding: 5%;
+    border-radius: 16px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #035b5b, #059191);
+    border: 1px solid rgba(255,255,255,0.2);
+    justify-items: center;
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* hover effect */
+.continer .Left > div:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.Left .up {
+    width: 100%;
+    background: linear-gradient(135deg, #035b5b, #059191);
+    border-radius: 18px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clock title */
+.Left .up h1 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Time */
+.Left .up h2 {
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+}
+.Left .down h1 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    color: white;
+}
+.down{
+    width: 100%;
+    padding: 5px 20px 20px 20px;
+    background: linear-gradient(135deg, #035b5b, #059191);
+    border-radius: 15px;
+    color: white;
+}
+
+.down h1{
+    margin-bottom: 15px;
+    margin-top: -5px;
+    font-weight: 600;
+}
+
+.announcement-box{
+    position: relative;
+    width: 80%;
+    height: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.announcement-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.nav-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(3, 91, 91, 0.5);
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid white;
+}
+
+.nav-btn:hover{
+    background: #059191;
+}
+
+.prev{
+    left: 10px;
+}
+
+.next{
+    right: 10px;
+}
+.Statistics{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card */
+.stat-card{
+    background: white;
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient top bar */
+.stat-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(135deg, #035b5b, #059191);
+}
+
+/* Hover */
+.stat-card:hover{
+    transform: translateY(-8px);
+}
+
+/* Icon */
+.stat-card i{
+    font-size: 36px;
+    color: #035b5b;
+    margin-bottom: 12px;
+}
+
+/* Numbers */
+.stat-card h2{
+    font-size: 32px;
+    margin: 8px 0;
+    color: #333;
+}
+
+/* Text */
+.stat-card p{
+    font-size: 15px;
+    color: #777;
+    font-weight: 500;
+}
+
+/* Optional color variations */
+.completed i{ color: #059191; }
+.pending i{ color: #f39c12; }
+.courses i{ color: #035b5b; }
+
+
+.Personal-Info{
+    grid-column: span 2;
+    background: linear-gradient(135deg, #035b5b, #059191);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Image */
+.Personal-Info .user-img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+}
+
+.Personal-Info img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Text */
+.user-details h2{
+    font-size: 26px;
+    margin: 0;
+}
+
+.user-details span{
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Hover effect */
+.Personal-Info:hover{
+    transform: translateY(-6px);
+    transition: 0.3s ease;
+}

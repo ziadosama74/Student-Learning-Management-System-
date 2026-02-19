@@ -29,7 +29,7 @@ body {
     color: #636363;
 }
 .right{
-    background-color: rgb(3, 89, 91);
+    background: linear-gradient(135deg, #035b5b, #059191);
     color: white;
     width: 50%;
     display: flex;
@@ -69,7 +69,7 @@ button{
     border-radius: 5px;
     font-size: 15px;
     margin: 10px 0 15px 0;
-    background-color: rgba(3, 89, 91);
+    background: linear-gradient(135deg, #035b5b, #059191);
     border: none;
     color: white;
     transition: background-color 0.3s ease;

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/StyleDashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="" id="DashboardLink">Dashboard</a></li>
+            <li><a href="">Tasks</a></li>
+            <li><a href="" id="Courses">Courses</a></li>
+            <li><a href="" id="ProLink">Profile</a></li>
+            <li><a href="/index.html" style="color: rgb(3, 89, 91);background-color: white;">Log out</a></li>
+        </ul>
+    </header>
+    <div class="continer">
+        <div class="Left">
+            <div class="up">
+                <i class="fa-regular fa-clock"></i>
+                <h1>Clock</h1>
+                <h2 id="clock">12:45:32 PM</h2>
+            </div>
+            <div class="down">
+                <h1>Announcements</h1>
+
+                <div class="announcement-box">
+                    <button class="nav-btn prev" id="nav-btn-prev">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                        <img id="announcementImg" src="/Imgaes/cleancode.png" alt="Announcement">
+                    <button class="nav-btn next" id="nav-btn-next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="Statistics">
+            <div class="stat-card">
+                <i class="fa-solid fa-list-check"></i>
+                <h2 id="totalTasks">120</h2>
+                <p>Total Tasks</p>
+            </div>
+            <div class="stat-card completed">
+                <i class="fa-solid fa-circle-check"></i>
+                <h2 id="completedTasks">85</h2>
+                <p>Completed Tasks</p>
+            </div>
+            <div class="stat-card pending">
+                <i class="fa-solid fa-clock"></i>
+                <h2 id="pendingTasks">35</h2>
+                <p>Pending Tasks</p>
+            </div>
+            <div class="stat-card courses">
+                <i class="fa-solid fa-book-open"></i>
+                <h2 id="totalCourses">6</h2>
+                <p>Total Courses</p>
+            </div>
+            <div class="Personal-Info">
+                <div class="user-img">
+                    <img src="/Imgaes/DefultImage.png" alt="User Image" id="UserImg">
+                </div>
+                <div class="user-details">
+                    <h2 id="UserName">Ziad Osama</h2>
+                    <span>ITI Student</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/JS/ScriptDashboard.js"></script>
+</html>

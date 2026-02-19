@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/StyleCourses.css">
+    <title>Courses</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="" id="DashboardLink">Dashboard</a></li>
+            <li><a href="">Tasks</a></li>
+            <li><a href="" id="Courses">Courses</a></li>
+            <li><a href="" id="ProLink">Profile</a></li>
+            <li><a href="/index.html" style="color: rgb(3, 89, 91);background-color: white;">Log out</a></li>
+        </ul>
+    </header>
+    <div class="continer">
+        <div class="Left">
+            <div class="add-course-card">
+                <h2>
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add New Course
+                </h2>
+                <div class="form-group">
+                    <!-- <label>Course Name</label> -->
+                    <select id="CourseSelect">
+                        <option value="">Select Course</option>
+                        <!-- Programming & CS Fundamentals -->
+                        <option value="Introduction to Programming">Introduction to Programming</option>
+                        <option value="Object-Oriented Programming Concepts">Object-Oriented Programming Concepts</option>
+                        <option value="Data Structures and Algorithms">Data Structures and Algorithms</option>
+                        <option value="Operating Systems Fundamentals">Operating Systems Fundamentals</option>
+                        <option value="Advanced C Programming under Linux Environment">
+                            Advanced C Programming under Linux Environment
+                        </option>
+
+                        <!-- Software Engineering -->
+                        <option value="Introduction to Software Engineering">
+                            Introduction to Software Engineering
+                        </option>
+                        <option value="Agile Software Development Methodologies">
+                            Agile Software Development Methodologies
+                        </option>
+                        <option value="Versioning Control Systems Core Courses">
+                            Versioning Control Systems Core Courses
+                        </option>
+
+                        <!-- Networking & Telecom -->
+                        <option value="Introduction to Computer Networks">
+                            Introduction to Computer Networks
+                        </option>
+                        <option value="GSM & GPRS Network Fundamentals & Architecture">
+                            GSM & GPRS Network Fundamentals & Architecture
+                        </option>
+                        <option value="3G Network Fundamentals & Architecture">
+                            3G Network Fundamentals & Architecture
+                        </option>
+                        <option value="4G LTE Network Fundamentals & Architecture">
+                            4G LTE Network Fundamentals & Architecture
+                        </option>
+                        <option value="5G Network Fundamentals & Architecture">
+                            5G Network Fundamentals & Architecture
+                        </option>
+                        <option value="Signaling System No.7 & IMS Network Structure">
+                            Signaling System No.7 & IMS Network Structure
+                        </option>
+
+                        <!-- Telecom Platforms -->
+                        <option value="Prepaid Realtime Charging System">
+                            Prepaid Realtime Charging System
+                        </option>
+                        <option value="Post Paid Billing System">
+                            Post Paid Billing System
+                        </option>
+                        <option value="Value Added Services & Platforms">
+                            Value Added Services & Platforms
+                        </option>
+                        <option value="eTOM (Enhanced Telecom Operations Management) Model">
+                            eTOM (Enhanced Telecom Operations Management) Model
+                        </option>
+
+                        <!-- Linux & System Admin -->
+                        <option value="Red Hat System Administration I">
+                            Red Hat System Administration I
+                        </option>
+                        <option value="Red Hat System Administration II">
+                            Red Hat System Administration II
+                        </option>
+                        <option value="Red Hat System Administration III">
+                            Red Hat System Administration III
+                        </option>
+                        <option value="Bash Shell Scripts">Bash Shell Scripts</option>
+                        <option value="Solaris Network Administration">
+                            Solaris Network Administration
+                        </option>
+
+                        <!-- Databases -->
+                        <option value="Database Fundamentals">Database Fundamentals</option>
+                        <option value="PostgreSQL Database">PostgreSQL Database</option>
+                        <option value="MongoDB">MongoDB</option>
+
+                        <!-- Programming Languages -->
+                        <option value="Developing Applications using Java Programming">
+                            Developing Applications using Java Programming
+                        </option>
+                        <option value="Java Api For Integrated Network (JAIN)">
+                            Java Api For Integrated Network (JAIN)
+                        </option>
+                        <option value="Functional Programming using Erlang">
+                            Functional Programming using Erlang
+                        </option>
+                        <option value="Erlang/OTP Programming">Erlang/OTP Programming</option>
+                        <option value="Python Programming">Python Programming</option>
+
+                        <!-- Web & Cloud -->
+                        <option value="Client-Side Technologies">Client-Side Technologies</option>
+                        <option value="HTML5 & CSS3">HTML5 & CSS3</option>
+                        <option value="Web Development for Telecom">
+                            Web Development for Telecom
+                        </option>
+                        <option value="Web Services">Web Services</option>
+                        <option value="Cloud Computing and Dockers Fundamentals">
+                            Cloud Computing and Dockers Fundamentals
+                        </option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <!-- <label>Instructor</label> -->
+                    <input type="text" placeholder="Instructor name">
+                </div>
+                <button class="add-course-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Course
+                </button>
+            </div>
+            <div class="add-course-card">
+                <div class="Personal-Info">
+                    <div class="user-img">
+                        <img src="/Imgaes/DefultImage.png" alt="User Image" id="UserImg">
+                    </div>
+                    <div class="user-details">
+                        <h2 id="UserName">Ziad Osama</h2>
+                        <span>ITI Student</span>
+                    </div>
+                    <div class="user-img">
+                        <img src="/Imgaes/TelecomApp.png" alt="User Image">
+                    </div>
+                    <div class="user-img">
+                        <img src="/Imgaes/iti-logo.png" alt="User Image" style=" object-fit:contain;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="add-course-card">
+                <h2>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Find Courses by Instructor Name
+                </h2>
+
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Instructor name">
+                </div>
+                <button class="add-course-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Find
+                </button>
+            </div>
+            <div class="BoxCourse">
+            </div>
+    </div>
+</body>
+<script src="/JS/ScriptCourse.js"></script>
+</html>
