@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="/CSS/StyleProfilePage.css">
+    <title>Profile</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="" id="DashboardLink">Dashboard</a></li>
+            <li><a href="" id="Tasks">Tasks</a></li>
+            <li><a href="" id="Courses">Courses</a></li>
+            <li><a href="" id="ProLink">Profile</a></li>
+            <li><a href="/index.html" style="color: rgb(3, 89, 91);background-color: white;">Log out</a></li>
+        </ul>
+    </header>
+    <div class="profile-card">
+
+    <div class="img">
+        <img src="/Imgaes/DefultImage.png" alt="Profile" id="ImageUser">
+        <span id="ChangeImg"><i class="fa-solid fa-camera"></i></span>
+        <input type="file" id="ImgInput" accept="image/*" hidden>
+    </div>
+    <div class="form">
+        <div class="input-group">
+            <input type="text" placeholder="Enter your full name" id="FN">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="New password" maxlength="6" id="NePas">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Confirm password" maxlength="6" id="ConPas">
+        </div>
+        <button class="save-btn" id="save-btn">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+        <span id="Msg" style="color: #035b5b;"></span>
+    </div>
+</div>
+<script src="/JS/ScriptDataProfile.js"></script>
+</body>
+</html>
