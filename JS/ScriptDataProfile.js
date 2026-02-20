@@ -60,6 +60,7 @@ SaveBtn.addEventListener("click", function () {
 var Profile = document.getElementById("ProLink");
 var Courses = document.getElementById("Courses");
 var DashboardLink = document.getElementById("DashboardLink");
+var Tasks = document.getElementById("Tasks");
 Profile.addEventListener("click",()=>{
     Profile.href = `/pages/profile.html?index=${indexUser}`;
 });
@@ -68,4 +69,7 @@ Courses.addEventListener("click",()=>{
 });
 DashboardLink.addEventListener("click",()=>{
     DashboardLink.href = `/pages/Dashboard.html?index=${indexUser}`;
+});
+Tasks.addEventListener("click",()=>{
+    Tasks.href = `/pages/Tasks.html?index=${indexUser}`;
 });

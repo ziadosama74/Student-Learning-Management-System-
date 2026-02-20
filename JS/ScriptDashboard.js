@@ -18,8 +18,14 @@ var completedTasks = document.getElementById("completedTasks");
 var pendingTasks = document.getElementById("pendingTasks");
 var totalCourses = document.getElementById("totalCourses");
 totalTasks.textContent = usersFromStorage[indexUser].TasksAll.length;
-completedTasks.textContent = usersFromStorage[indexUser].TasksComleteted.length;
-pendingTasks.textContent = usersFromStorage[indexUser].TasksPending.length;
+var CompletedTasksCounter = 0 ;
+var PendingTasksCounter = 0 ;
+for(var i = 0 ; i < usersFromStorage[indexUser].TasksAll.length ; i++){
+    if(usersFromStorage[indexUser].TasksAll[i].TaskStatus == "Completed") CompletedTasksCounter++;
+    else PendingTasksCounter++;
+}
+completedTasks.textContent = CompletedTasksCounter;
+pendingTasks.textContent = PendingTasksCounter;
 totalCourses.textContent = usersFromStorage[indexUser].Courses.length;
 //===================================================================================
 //                            The Clock
@@ -30,15 +36,11 @@ function updateClock() {
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
-
     const ampm = hours >= 12 ? "PM" : "AM";
-
     hours = hours % 12;
-    hours = hours ? hours : 12; // 0 => 12
-
+    hours = hours ? hours : 12;
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-
     clock.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
 }
 updateClock();
@@ -80,6 +82,7 @@ function changeImageSmooth(newSrc){
 var Profile = document.getElementById("ProLink");
 var Courses = document.getElementById("Courses");
 var DashboardLink = document.getElementById("DashboardLink");
+var Tasks = document.getElementById("Tasks");
 Profile.addEventListener("click",()=>{
     Profile.href = `/pages/profile.html?index=${indexUser}`;
 });
@@ -88,4 +91,7 @@ Courses.addEventListener("click",()=>{
 });
 DashboardLink.addEventListener("click",()=>{
     DashboardLink.href = `/pages/Dashboard.html?index=${indexUser}`;
+});
+Tasks.addEventListener("click",()=>{
+    Tasks.href = `/pages/Tasks.html?index=${indexUser}`;
 });

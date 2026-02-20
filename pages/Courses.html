@@ -11,7 +11,7 @@
     <header>
         <ul>
             <li><a href="" id="DashboardLink">Dashboard</a></li>
-            <li><a href="">Tasks</a></li>
+            <li><a href="" id="Tasks">Tasks</a></li>
             <li><a href="" id="Courses">Courses</a></li>
             <li><a href="" id="ProLink">Profile</a></li>
             <li><a href="/index.html" style="color: rgb(3, 89, 91);background-color: white;">Log out</a></li>
@@ -25,7 +25,6 @@
                     Add New Course
                 </h2>
                 <div class="form-group">
-                    <!-- <label>Course Name</label> -->
                     <select id="CourseSelect">
                         <option value="">Select Course</option>
                         <!-- Programming & CS Fundamentals -->
@@ -129,13 +128,13 @@
 
                 </div>
                 <div class="form-group">
-                    <!-- <label>Instructor</label> -->
-                    <input type="text" placeholder="Instructor name">
+                    <input type="text" placeholder="Instructor name" id="InstructorNameaddCourse">
                 </div>
-                <button class="add-course-btn">
+                <button class="add-course-btn" id="AddCourseBtn">
                     <i class="fa-solid fa-plus"></i>
                     Add Course
                 </button>
+                <span id="MsgErorCourse" style="display:inline-block; width:100%; text-align: center;margin-top: 20px;">&nbsp;&nbsp;&nbsp;</span>
             </div>
             <div class="add-course-card">
                 <div class="Personal-Info">
@@ -167,15 +166,16 @@
                     
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Instructor name">
+                    <input type="text" placeholder="Instructor name" id="InsNameSreach">
                 </div>
-                <button class="add-course-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    Find
-                </button>
             </div>
-            <div class="BoxCourse">
+            <div class="BoxCourse" id="BoxCourse">
+                <div class="course-card">
+                    
+                </div>
+
             </div>
+        </div>
     </div>
 </body>
 <script src="/JS/ScriptCourse.js"></script>

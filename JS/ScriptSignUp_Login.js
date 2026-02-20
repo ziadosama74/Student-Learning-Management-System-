@@ -52,8 +52,6 @@ SignUpBtn.addEventListener("click", () => {
             password:SignUpPass.value,
             ImgSrc : "/Imgaes/DefultImage.png",
             TasksAll:[],
-            TasksComleteted:[],
-            TasksPending:[],
             Courses:[]
         });
         localStorage.setItem("users", JSON.stringify(users));

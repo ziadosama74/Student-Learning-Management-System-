@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/StyleTasks.css">
+</head>
+<body>
+
+<header>
+    <ul>
+        <li><a href="" id="DashboardLink">Dashboard</a></li>
+        <li><a href="" id="Tasks">Tasks</a></li>
+        <li><a href="" id="Courses">Courses</a></li>
+        <li><a href="" id="ProLink">Profile</a></li>
+        <li><a href="/index.html" style="color: rgb(3, 89, 91);background-color: white;">Log out</a></li>
+    </ul>
+</header>
+
+<div class="continer">
+
+    <!-- Add Task -->
+    <div class="add-task-card">
+        <h2>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Task
+        </h2>
+
+        <div class="task-form">
+            <input type="text" placeholder="Task name" id="TaskName">
+            <select id="TaskPerority">
+                <option value="">Priority</option>
+                <option>High</option>
+                <option>Low</option>
+            </select>
+            <input type="date" id="TaskDue">
+            <button class="add-task-btn" id="AddTaskBtn">
+                <i class="fa-solid fa-plus"></i> Add Task
+            </button>
+        </div>
+    </div>
+
+    <!-- Tasks Box -->
+    <div class="tasks-box" id="TasksBox">
+
+        
+    </div>
+
+    <!-- Personal Info -->
+    <section style="position: fixed; bottom: 10px; width:96%;">
+        <div class="Personal-Info">
+            <div class="user-img">
+                <img src="/Imgaes/DefultImage.png" id="ImgUsr">
+            </div>
+
+            <div class="user-details">
+                <h2 id="UsrName"></h2>
+                <span>ITI Student</span>
+            </div>
+
+            <div class="user-img">
+                <img src="/Imgaes/TelecomApp.png">
+            </div>
+
+            <div class="user-img" >
+                <img src="/Imgaes/iti-logo.png" style="object-fit: contain;">
+            </div>
+            <div class="add-task-card" style="width: 60%;">
+                <h2>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Find Task
+                </h2>
+
+                <div class="task-form">
+                    <input type="text" placeholder="Task name" id="TaskNameSreach">
+                    <select id="SortBy">
+                        <option value="">Priority</option>
+                        <option value="High">High</option>
+                        <option value="Low">Low</option>
+                    </select>
+                    <input type="date" id="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<script src="/JS/ScriptTasks.js"></script>
+</body>
+</html>
