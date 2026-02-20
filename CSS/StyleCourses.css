@@ -366,3 +366,125 @@ header ul li a:hover::after {
     color: #fff;
     font-weight: bold;
 }
+
+
+
+
+/* Overlay */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+/* Show popup */
+.confirm-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Popup box */
+.confirm-box {
+    background: #fff;
+    width: 320px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    animation: scaleIn 0.3s ease;
+}
+
+.confirm-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.confirm-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.confirm-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn.cancel {
+    background: #eee;
+    color: #333;
+}
+
+.btn.cancel:hover {
+    background: #ddd;
+}
+
+.btn.delete {
+    background: #e53935;
+    color: #fff;
+}
+
+.btn.delete:hover {
+    background: #c62828;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.msg-popup {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    z-index: 9999;
+    transition: all 0.4s ease;
+}
+
+.msg-popup.show {
+    right: 20px;
+}
+
+.msg-box {
+    min-width: 260px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    font-size: 15px;
+}
+
+.msg-box i {
+    font-size: 22px;
+}
+
+.msg-success { background: linear-gradient(135deg,#2ecc71,#27ae60); }
+.msg-error   { background: linear-gradient(135deg,#e74c3c,#c0392b); }
+.msg-warning { background: linear-gradient(135deg,#f39c12,#e67e22); }
+.msg-info    { background: linear-gradient(135deg,#3498db,#2980b9); }

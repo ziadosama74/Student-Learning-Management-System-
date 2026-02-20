@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasks</title>
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="/CSS/StyleTasks.css">
 </head>
 <body>
@@ -24,14 +20,11 @@
 </header>
 
 <div class="continer">
-
-    <!-- Add Task -->
     <div class="add-task-card">
         <h2>
             <i class="fa-solid fa-circle-plus"></i>
-            Add New Task
+            Add New Task 
         </h2>
-
         <div class="task-form">
             <input type="text" placeholder="Task name" id="TaskName">
             <select id="TaskPerority">
@@ -46,13 +39,10 @@
         </div>
     </div>
 
-    <!-- Tasks Box -->
     <div class="tasks-box" id="TasksBox">
-
         
     </div>
 
-    <!-- Personal Info -->
     <section style="position: fixed; bottom: 10px; width:96%;">
         <div class="Personal-Info">
             <div class="user-img">
@@ -79,17 +69,41 @@
 
                 <div class="task-form">
                     <input type="text" placeholder="Task name" id="TaskNameSreach">
+                    <span style="display: inline-block; margin-top: 10px;">Sort by </span>
                     <select id="SortBy">
                         <option value="">Priority</option>
                         <option value="High">High</option>
                         <option value="Low">Low</option>
                     </select>
-                    <input type="date" id="">
+                    <span style="display: inline-block; margin-top: 10px;">Due Date</span>
+                    <select id="SortByDue">
+                        <option value="">Due</option>
+                        <option value="High">Ascending </option>
+                        <option value="Low">Descending</option>
+                    </select>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Confirm Delete Popup -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+            <h3>Confirm Delete</h3>
+            <p>Are you sure you want to delete this task?</p>
 
+            <div class="confirm-actions">
+                <button class="btn cancel" id="cancelDelete">Cancel</button>
+                <button class="btn delete" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- Message Popup -->
+    <div id="msgPopup" class="msg-popup">
+    <div class="msg-box">
+        <i id="msgIcon" class="fa-solid fa-circle-info"></i>
+        <p id="msgText">Message here</p>
+    </div>
+    </div>
 </div>
 <script src="/JS/ScriptTasks.js"></script>
 </body>

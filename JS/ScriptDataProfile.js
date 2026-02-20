@@ -23,7 +23,7 @@ ChangeImg.addEventListener("click", function () {
 ImgInput.addEventListener("change", function () {
     var file = this.files[0];
     if (!file) return;
-    var reader = new FileReader();
+    var reader = new FileReader(); 
     reader.onload = function (e) {
         ImageUser.src = e.target.result;
         usersFromStorage[indexUser].ImgSrc = e.target.result;

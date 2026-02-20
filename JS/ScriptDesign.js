@@ -17,4 +17,4 @@ Login.addEventListener("click",()=>{
     Cover.style.borderRadius = "0  16px  16px 0";
     MsgSiUp.textContent = "";
     MsgSiIn.textContent = "";
-});
+}); 

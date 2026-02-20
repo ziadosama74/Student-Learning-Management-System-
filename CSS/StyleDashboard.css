@@ -24,7 +24,7 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* nav list */
+
 header ul {
     list-style: none;
     display: flex;
@@ -36,7 +36,7 @@ header ul {
     padding: 0 40px;
 }
 
-/* links */
+
 header ul li a {
     text-decoration: none;
     font-size: 16px;
@@ -50,25 +50,25 @@ header ul li a {
     transition: background-color 0.3s ease;
 }
 
-/* hover */
+
 header ul li a:hover {
     color: #035b5b;
     background-color: white;
     text-decoration: none;
 }
 
-/* REMOVE underline animation */
+
 header ul li a::after {
     display: none;
 }
 
-/* active link */
+
 header ul li a.active {
     background: rgba(255,255,255,0.25);
     color: #ffffff;
 }
 
-/* underline animation */
+
 header ul li a::after {
     content: "";
     position: absolute;
@@ -86,7 +86,7 @@ header ul li a:hover::after {
     width: 60%;
 }
 
-/* mobile responsive */
+
 @media (max-width: 768px) {
     header ul {
         padding: 0 15px;
@@ -129,7 +129,7 @@ header ul li a:hover::after {
         box-shadow 0.3s ease;
 }
 
-/* hover effect */
+
 .continer .Left > div:hover {
     transform: translateY(-6px);
     box-shadow:
@@ -150,7 +150,7 @@ header ul li a:hover::after {
     align-items: center;
 }
 
-/* Clock title */
+
 .Left .up h1 {
     font-size: 22px;
     font-weight: 500;
@@ -160,7 +160,7 @@ header ul li a:hover::after {
     opacity: 0.9;
 }
 
-/* Time */
+
 .Left .up h2 {
     font-size: 42px;
     font-weight: bold;
@@ -246,7 +246,7 @@ header ul li a:hover::after {
     padding: 20px;
 }
 
-/* Card */
+
 .stat-card{
     background: white;
     border-radius: 18px;
@@ -258,7 +258,7 @@ header ul li a:hover::after {
     overflow: hidden;
 }
 
-/* Gradient top bar */
+
 .stat-card::before{
     content: "";
     position: absolute;
@@ -269,33 +269,33 @@ header ul li a:hover::after {
     background: linear-gradient(135deg, #035b5b, #059191);
 }
 
-/* Hover */
+
 .stat-card:hover{
     transform: translateY(-8px);
 }
 
-/* Icon */
+
 .stat-card i{
     font-size: 36px;
     color: #035b5b;
     margin-bottom: 12px;
 }
 
-/* Numbers */
+
 .stat-card h2{
     font-size: 32px;
     margin: 8px 0;
     color: #333;
 }
 
-/* Text */
+
 .stat-card p{
     font-size: 15px;
     color: #777;
     font-weight: 500;
 }
 
-/* Optional color variations */
+
 .completed i{ color: #059191; }
 .pending i{ color: #f39c12; }
 .courses i{ color: #035b5b; }
@@ -313,7 +313,7 @@ header ul li a:hover::after {
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* Image */
+
 .Personal-Info .user-img{
     width: 110px;
     height: 110px;
@@ -329,7 +329,7 @@ header ul li a:hover::after {
     object-fit: cover;
 }
 
-/* Text */
+
 .user-details h2{
     font-size: 26px;
     margin: 0;
@@ -340,7 +340,6 @@ header ul li a:hover::after {
     opacity: 0.9;
 }
 
-/* Hover effect */
 .Personal-Info:hover{
     transform: translateY(-6px);
     transition: 0.3s ease;

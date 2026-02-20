@@ -68,7 +68,7 @@ NavBtnPrev.addEventListener("click",()=>{
         changeImageSmooth(ImagesList[IndexImgSlider]);
     }
 });
-// smo0th
+// smooth
 function changeImageSmooth(newSrc){
     ImgSlider.style.opacity = 0.5;
     setTimeout(()=>{

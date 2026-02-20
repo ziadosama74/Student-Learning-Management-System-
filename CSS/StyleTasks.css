@@ -9,7 +9,7 @@ body {
     background: #ffffff;
 }
 
-/* HEADER */
+
 header {
     width: 100%;
     height: 70px;
@@ -44,7 +44,7 @@ header ul li a:hover {
     color: #035b5b;
 }
 
-/* CONTAINER */
+
 .continer {
     margin-top: 90px;
     padding: 30px;
@@ -53,7 +53,7 @@ header ul li a:hover {
     gap: 25px;
 }
 
-/* ADD TASK */
+
 .add-task-card {
     background: linear-gradient(135deg, #035b5b, #059191);
     border-radius: 16px;
@@ -84,7 +84,7 @@ header ul li a:hover {
     cursor: pointer;
 }
 
-/* TASKS BOX */
+
 .tasks-box {
     height: 200px;
     overflow-y: auto;
@@ -92,7 +92,6 @@ header ul li a:hover {
     /* background-color: red; */
 }
 
-/* SCROLLBAR */
 .tasks-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -101,7 +100,7 @@ header ul li a:hover {
     border-radius: 10px;
 }
 
-/* TASK CARD */
+
 .task-card {
     background: white;
     border-radius: 14px;
@@ -113,7 +112,7 @@ header ul li a:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* TASK INFO */
+
 .task-info h3 {
     margin: 0;
 }
@@ -123,14 +122,14 @@ header ul li a:hover {
     color: #777;
 }
 
-/* ACTIONS */
+
 .task-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* STATUS */
+
 .status {
     padding: 6px 14px;
     border-radius: 50px;
@@ -148,7 +147,7 @@ header ul li a:hover {
     color: #4caf50;
 }
 
-/* BUTTONS */
+
 .task-actions button {
     width: 36px;
     height: 36px;
@@ -172,7 +171,7 @@ header ul li a:hover {
     color: #f44336;
 }
 
-/* PERSONAL INFO */
+
 .Personal-Info {
     background: linear-gradient(135deg, #035b5b, #059191);
     border-radius: 20px;
@@ -197,7 +196,7 @@ header ul li a:hover {
     border-radius: 50%;
     object-fit: cover;
 }
-/* PRIORITY BADGE */
+
 .priority {
     display: inline-flex;
     align-items: center;
@@ -209,14 +208,138 @@ header ul li a:hover {
     text-transform: capitalize;
 }
 
-/* High Priority */
+
 .priority.high {
     background: rgba(244, 67, 54, 0.15);
     color: #f44336;
 }
 
-/* Low Priority */
+
 .priority.low {
     background: rgba(3, 91, 91, 0.15);
     color: #035b5b;
 }
+
+
+
+
+
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+
+.confirm-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.confirm-box {
+    background: #fff;
+    width: 320px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    animation: scaleIn 0.3s ease;
+}
+
+.confirm-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.confirm-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+.confirm-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn.cancel {
+    background: #eee;
+    color: #333;
+}
+
+.btn.cancel:hover {
+    background: #ddd;
+}
+
+.btn.delete {
+    background: #e53935;
+    color: #fff;
+}
+
+.btn.delete:hover {
+    background: #c62828;
+}
+
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.msg-popup {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    z-index: 9999;
+    transition: all 0.4s ease;
+}
+
+.msg-popup.show {
+    right: 20px;
+}
+
+.msg-box {
+    min-width: 260px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    font-size: 15px;
+}
+
+.msg-box i {
+    font-size: 22px;
+}
+
+.msg-success { background: linear-gradient(135deg,#2ecc71,#27ae60); }
+.msg-error   { background: linear-gradient(135deg,#e74c3c,#c0392b); }
+.msg-warning { background: linear-gradient(135deg,#f39c12,#e67e22); }
+.msg-info    { background: linear-gradient(135deg,#3498db,#2980b9); }

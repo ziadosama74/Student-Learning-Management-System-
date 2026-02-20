@@ -9,7 +9,6 @@ var UserName = document.getElementById("UserName");
 var UserImg = document.getElementById("UserImg");
 UserName.textContent = usersFromStorage[indexUser].name;
 UserImg.src = usersFromStorage[indexUser].ImgSrc;
-console.log(usersFromStorage[indexUser]);
 //===================================================================================
 //                            The Header Links
 //===================================================================================
@@ -36,8 +35,44 @@ Tasks.addEventListener("click",()=>{
 var CourseSelect = document.getElementById("CourseSelect");
 var InstructorNameaddCourse = document.getElementById("InstructorNameaddCourse");
 var AddCourseBtn = document.getElementById("AddCourseBtn");
-var MsgErorCourse = document.getElementById("MsgErorCourse");
 var BoxCourse = document.getElementById("BoxCourse");
+
+var overlay = document.getElementById("confirmOverlay");
+var cancelBtn = document.getElementById("cancelDelete");
+var confirmBtn = document.getElementById("confirmDelete");
+var deleteCallback = null;
+
+// Open popup
+function openDeletePopup(callback) {
+    deleteCallback = callback;
+    overlay.classList.add("show");
+}
+
+// Close popup
+function closeDeletePopup() {
+    overlay.classList.remove("show");
+    deleteCallback = null;
+}
+
+// Cancel
+cancelBtn.addEventListener("click", closeDeletePopup);
+
+// Confirm delete
+confirmBtn.addEventListener("click", () => {
+    if (deleteCallback) deleteCallback();
+    closeDeletePopup();
+});
+
+// Close when clicking outside
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeDeletePopup();
+});
+
+function deleteCourse(courseIndex) {
+    usersFromStorage[indexUser].Courses.splice(courseIndex, 1);
+    localStorage.setItem("users", JSON.stringify(usersFromStorage));
+    loadCourses();
+}
 
 
 AddCourseBtn.addEventListener("click", () => {
@@ -45,41 +80,55 @@ AddCourseBtn.addEventListener("click", () => {
     var instructor = InstructorNameaddCourse.value.trim();
 
     if (selectedValue === "" || instructor === "") {
-        MsgErorCourse.textContent = "Please select course and enter instructor name";
-        MsgErorCourse.classList.add("Invalid");
+        showMessage("error", "Please fill all fields");
         return;
     }
+    var CourseFound = false;
+    for(var i = 0 ; i < usersFromStorage[indexUser].Courses.length ; i++){
+        if(usersFromStorage[indexUser].Courses[i].CourseName == selectedValue) CourseFound = true;
+    }
+    if(CourseFound) return;
     usersFromStorage[indexUser].Courses.push({
         CourseName: selectedValue,
         CourseInstructor: instructor
     });
+
     localStorage.setItem("users", JSON.stringify(usersFromStorage));
-    MsgErorCourse.textContent = "Your course has been added";
-    MsgErorCourse.classList.add("valid");
+    showMessage("success", "Course added successfully");
+    CourseSelect.value = "";
+    InstructorNameaddCourse.value = "";
+
     loadCourses();
 });
 
 function AddNewCourseToBox(selectedValue, instructor, courseIndex) {
     var Course_Card = document.createElement("div");
     Course_Card.classList.add("course-card");
+
     var course_info = document.createElement("div");
     course_info.classList.add("course-info");
+
     var course_title = document.createElement("h3");
-    var course_instructor = document.createElement("p");
     course_title.textContent = selectedValue;
+
+    var course_instructor = document.createElement("p");
     course_instructor.textContent = "Eng. " + instructor;
+
     course_info.appendChild(course_title);
     course_info.appendChild(course_instructor);
-    Course_Card.appendChild(course_info);
+
     var deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> Delete`;
     deleteBtn.classList.add("delete-btn");
+    deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i> Delete`;
+
     deleteBtn.addEventListener("click", () => {
-        usersFromStorage[indexUser].Courses.splice(courseIndex, 1);
-        localStorage.setItem("users", JSON.stringify(usersFromStorage));
-        Course_Card.remove();
-        loadCourses();
+        openDeletePopup(() => {
+            deleteCourse(courseIndex);
+            showMessage("warning", "Course deleted");
+        });
     });
+
+    Course_Card.appendChild(course_info);
     Course_Card.appendChild(deleteBtn);
     BoxCourse.appendChild(Course_Card);
 }
@@ -123,4 +172,39 @@ function searchByInstructor() {
     });
 }
 InsNameSreach.addEventListener("input", searchByInstructor);
+
+
+
+
+var msgPopup = document.getElementById("msgPopup");
+var msgText  = document.getElementById("msgText");
+var msgIcon  = document.getElementById("msgIcon");
+
+function showMessage(type, text) {
+    msgPopup.className = "msg-popup show";
+    msgText.textContent = text;
+
+    msgIcon.className = "fa-solid";
+
+    if (type === "success") {
+        msgPopup.firstElementChild.className = "msg-box msg-success";
+        msgIcon.classList.add("fa-circle-check");
+    }
+    else if (type === "error") {
+        msgPopup.firstElementChild.className = "msg-box msg-error";
+        msgIcon.classList.add("fa-circle-xmark");
+    }
+    else if (type === "warning") {
+        msgPopup.firstElementChild.className = "msg-box msg-warning";
+        msgIcon.classList.add("fa-triangle-exclamation");
+    }
+    else {
+        msgPopup.firstElementChild.className = "msg-box msg-info";
+        msgIcon.classList.add("fa-circle-info");
+    }
+
+    setTimeout(() => {
+        msgPopup.classList.remove("show");
+    }, 2500);
+}
 

@@ -20,7 +20,7 @@ body {
     overflow: hidden;
 }
 .Login,.signup{
-    background-color: white;
+    background-color: white; 
     width: 50%;
     padding: 60px;
     border-radius : 16px 0 0 16px;
